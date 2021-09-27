@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
     });
 });
 
+// with Aut
 // POST new comments
 // router.post("/", withAut, (req, res) => {
 //     Comment.create({
@@ -26,6 +27,7 @@ router.get("/", (req, res) => {
 //     });
 // });
 
+// without Aut
 router.post("/", (req, res) => {
     Comment.create({
         comment_text: req.body.comment_text,
@@ -39,6 +41,7 @@ router.post("/", (req, res) => {
     });
 });
 
+// with Aut
 // router.delete("/:id", withAut, (req, res) => {
 //     Comment.destroy({
 //         where: {
@@ -58,12 +61,13 @@ router.post("/", (req, res) => {
 //     });
 // });
 
+// without Aut
 router.delete("/:id",(req, res) => {
     Comment.destroy({
         where: {
             id: req.params.id
         }
-    })0
+    })
         .then(dbCommentData => {
             if (!dbCommentData) {
                 res.status(404).json({message: "No comment found with this id"});

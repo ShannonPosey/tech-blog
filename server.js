@@ -101,11 +101,11 @@ sequelize.sync({force: false}).then(() => {
 // install the following:
 // npm install
 // - init -y
-// - express-handlebars
-// - mysql2
-// - sequelize
 // - express
+// - sequelize
+// - mysql2
 // - dotenv
 // - bcrypt
+// - express-handlebars
 // - express-session
 // - connect-session-sequelize
