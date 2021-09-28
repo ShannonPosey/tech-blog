@@ -1,6 +1,5 @@
 # tech-blog
 
-# E-commerce Back End 
 ## Description 
 This is a CMS app for developers, and inspiring developers can create and post blogs about technology.  The user can log in to their account, and the user will be presented with navigation links to either the homepage, the dashboard, or they will have the option to log out.  If the developer is new to the tech blog, they can create a new account. 
 
