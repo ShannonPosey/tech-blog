@@ -1,5 +1,4 @@
-const { returnStatement } = require("@babel/types");
-const router = require("express");
+const router = require("express").Router();
 const {User, Comment, Post} = require("../../models");
 // const withAut = require("../../utils/auth");
 
@@ -89,7 +88,7 @@ router.post("/", (req, res) => {
 
 // POST /api/login
 // without Aut
-router.post("/login", withAut, (req, res) => {
+router.post("/login", (req, res) => {
     User.findOne({
         where: {
             email: req.body.email
@@ -149,7 +148,7 @@ router.post("/login", withAut, (req, res) => {
 // });
 
 // without Aut
-router.post("/logout", withAut, (req, res) => {
+router.post("/logout", (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
@@ -173,7 +172,7 @@ router.post("/logout", withAut, (req, res) => {
 // });
 
 // without Aut
-router.put("/:id", withAut, (req, res) => {
+router.put("/:id", (req, res) => {
     User.update(req.body, {
         individualHooks: true,
         where: {

@@ -1,5 +1,4 @@
-const { returnStatement } = require("@babel/types");
-const router = require("express");
+const router = require("express").Router();
 // const sequelize = require("../../config/connection");
 const {Post, User, Comment} = require("../../models");
 // const withAut = require("../../utils/auth");
