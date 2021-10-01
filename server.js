@@ -7,8 +7,7 @@ const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const sess = {
-    secret: "I know what you did last summer",
-    // secret: process.env.SECRET,
+    secret: process.env.SECRET,
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -18,7 +17,7 @@ const sess = {
 };
 
 const app = express();
-const PORT = process.env.PORT || 3001 ;
+const PORT = process.env.PORT || 3006 ;
 
 const routes = require("./controllers");
 
